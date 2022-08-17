@@ -1,0 +1,26 @@
+
+<style>
+</style>
+
+<ul style="">
+  <li (click)="getPage(math.max(1, activePage-1))"><</li>
+  <li *ngFor="let i of pageList"
+    style="
+    float:left;
+    border:1px solid black;
+    margin:3px;
+    padding:3px;"
+    [ngClass]="{'active': i == activePage}"
+    (click)="getPage(i)"
+    >
+    {{i}}
+  </li>
+  <li (click)="getPage(math.min(totalPage, activePage+1))">></li>
+</ul>
+
+<hr style="clear:both;">
+
+content below:<br>
+<p>
+  {{content}}
+</p>
